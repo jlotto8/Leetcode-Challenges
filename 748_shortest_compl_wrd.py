@@ -64,11 +64,22 @@ loop through list of words
 
         create a flag to check if the word is a completing word
         loop thru lic plate dict
-            check a letter from a word is not in it, or if the letter count is less than , 
+            check if the key is not in the word counts dict or if the lic plate letter count < value in plate dict
+                the flag is False because it is not a valid completing word
+                break out of the loop to save time
+        
+        create a result variable to hold the shortest completing word
+        create a shortest length variable to hold the len of each completing word
 
+        if the flag is True, and the length of the word is less than the current shortest word
+            reset the variable to the word
 
+        return the word
 
+problems
 
+- the nested for loop has poor efficiency; need to think about this further
+- there are a lot of steps- is there an easier way?
 """
 def completing_word(license_plate, words):
 
@@ -76,6 +87,9 @@ def completing_word(license_plate, words):
     for plate_char in license_plate.lower():  
         if plate_char.isalpha():  
             license_plate_counts[plate_char] = license_plate_counts.get(plate_char, 0) + 1
+
+    shortest_completing_word = None  # why do these have to be initialized here, instead of right befoore they aare used in the last code block?
+    shortest_length = float('inf') 
 
     for word in words:
         word_counts = {}
@@ -88,13 +102,9 @@ def completing_word(license_plate, words):
                 is_completing_word = False
                 break
 
-        shortest_completing_word = None
-        shortest_length = float('inf')
-
-        if is_completing_word:
-            if len(word) < shortest_length:
-                shortest_completing_word = word
-                shortest_length = len(word)
+        if is_completing_word and len(word) < shortest_length:
+            shortest_completing_word = word
+            shortest_length = len(word)
 
     return shortest_completing_word
 
