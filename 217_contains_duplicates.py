@@ -1,4 +1,4 @@
-# 217. Contains Duplicate
+#  217. Contains Duplicate
 
 # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
  
@@ -36,18 +36,18 @@ def has_duplicates(nums):
                 return True
    return False
 
-print(has_duplicates([1,2,3,4]))
+# print(has_duplicates([1,2,3,1]))
 
 
-# def has_dups(nums):
+def has_dups(nums):
 
-#     seen = set()
+    seen = set()
 
-#     for num in nums:
-#         if num in seen:
-#             return True
-#         if num not in seen:
-#             seen.add(num)
-#     return False
+    for num in nums:
+        if num in seen:
+            return True
+        if num not in seen:
+            seen.add(num)
+    return False
     
-# print(has_dups([1,2,3,4,5,5]))
+print(has_dups([1,2,3,4,5,5]))

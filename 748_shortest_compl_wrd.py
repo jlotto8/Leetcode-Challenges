@@ -80,6 +80,12 @@ problems
 
 - the nested for loop has poor efficiency; need to think about this further
 - there are a lot of steps- is there an easier way?
+
+- compare dictionaries
+- lic a subset of word; issubset; 
+- break down into 2 functions
+- consider sorting the words*
+- try again with built-in method
 """
 def completing_word(license_plate, words):
 
@@ -87,21 +93,27 @@ def completing_word(license_plate, words):
     for plate_char in license_plate.lower():  
         if plate_char.isalpha():  
             license_plate_counts[plate_char] = license_plate_counts.get(plate_char, 0) + 1
+    
+    print(f'lic plate {license_plate_counts}')
+
 
     shortest_completing_word = None  # why do these have to be initialized here, instead of right befoore they aare used in the last code block?
     shortest_length = float('inf') 
 
     for word in words:
         word_counts = {}
+
         for word_char in word:
             word_counts[word_char] = word_counts.get(word_char, 0) + 1
+            
+        print(f'word dict {word_counts}')
 
         is_completing_word = True
         for plate_char, plate_count in license_plate_counts.items():
             if plate_char not in word_counts or word_counts[plate_char] < plate_count:
                 is_completing_word = False
                 break
-
+                
         if is_completing_word and len(word) < shortest_length:
             shortest_completing_word = word
             shortest_length = len(word)

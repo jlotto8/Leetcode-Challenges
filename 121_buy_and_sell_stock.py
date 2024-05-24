@@ -42,8 +42,6 @@ loop through the list of numbers
     if current profit is < 0 do I need to do anything different?
     Do i ever stop incrementing the right pointer? - at the end of the list
 
-    
-
 create 2 pointers, left and right (buy, sell); start at 0
 create a results max profit variable to hold the result
 
