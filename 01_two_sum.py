@@ -27,6 +27,7 @@ if nums[i] + nums[i+1] == target
 return i,i+1
 """
 
+
 # def find_indices(nums, target):
     # nums = sorted(nums)
     # for i in range(len(nums)-1):
