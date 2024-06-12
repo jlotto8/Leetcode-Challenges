@@ -32,10 +32,9 @@ return the slice
 """
 
 def truncate_s(s,k):
-    # for word in s:
     s = s.split()
-    new_s = s[:k]
-    new_s.join
-    return new_s
+    new_list = s[:k]
+    answer  = " ".join(new_list)
+    return f'"{answer}"'
 print(truncate_s(s = "Hello how are you Contestant", k = 4))
     
