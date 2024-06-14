@@ -83,7 +83,6 @@ for word in words:
         res.append(word)
 return res
 
-
 set1 = {'q','w','e','r','t','y','u','i','o','p'}
         set2 = {'a','s','d','f','g','h','j','k','l'}
         set3 = {'z','x','c','v','b','n','m'}
@@ -94,5 +93,4 @@ set1 = {'q','w','e','r','t','y','u','i','o','p'}
             if (wordset&set1 == wordset) or (wordset&set2 == wordset) or (wordset&set3 == wordset):
                 res.append(i)
         return res
-
 """
