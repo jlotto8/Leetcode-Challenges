@@ -52,3 +52,9 @@ def unique_index(s):
             return i
     return -1
 print(unique_index('aabb'))
+
+
+s = 'hello'
+
+for letter in s:
+    if letter != letter.index(+1)
