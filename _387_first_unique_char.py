@@ -56,5 +56,5 @@ print(unique_index('aabb'))
 
 s = 'hello'
 
-for letter in s:
-    if letter != letter.index(+1)
+# for letter in s:
+    # if letter != letter.index(+1)
