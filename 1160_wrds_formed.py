@@ -29,6 +29,34 @@ E: each char in the input str can only be used once
 create a list to hold the 'good' strings
 look at the first word in the list, check if the first letter in the first word is in the char str
 if it is, remove that letter from the char str since letters can only be used once, then check the next letter in the first word, and continue the same steps until the end of the word
-if al the letters in the first word were in the char string, add the word to a results list
+if all the letters in the first word were in the char string, add the word to a results list
 
+then loop through the results list and create a variable to hold the value of adding the length of each str together
 """
+
+good = ['cat','hat']
+for word in good:
+    for char in good:
+        char_len = len(char) # why am i getting the error that it is an undefined variable if I try += here?
+        char_len = char_len + len(char)
+print(char_len)
+
+char_count_dict = dict()
+char_string = 'atach'
+for char in char_string:
+    char_count_dict[char] = char_count_dict.get(char,0)+1 
+print(char_count_dict)
+
+
+
+def good_strings(word_list, char_string):
+
+    good_string_results = []
+
+    for word in word_list:
+        for letter in word:
+            if letter in char_string:
+                copy_chars = char_string.copy()
+                copy_chars.replace(letter,'')
+        good_string_results.append(word)
+good_strings(["cat","bt","hat","tree"],'atach')
