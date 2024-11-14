@@ -83,8 +83,6 @@ def get_common_chars(words):
     #     for char in common_char_count:
     #         common_char_count[char] = min(common_char_count[char], word_counter[char])
 
-
-
     # results = []
 
     # for char, frequency in common_char_count.items():
@@ -104,5 +102,4 @@ def get_common_chars(words):
 #                 common_char_list.append(char)
 #     return common_char_list
 
-# print(get_common_chars(["bella","label","roller"]))  
-
+# print(get_common_chars(["bella","label","roller"])
