@@ -38,16 +38,27 @@ def has_duplicates(nums):
 
 # print(has_duplicates([1,2,3,1]))
 
+from collections import Counter
 
 def has_dups(nums):
 
-    seen = set()
+    x = Counter(nums)
 
-    for num in nums:
-        if num in seen:
+    for k,v in x.items():
+        if v >1:
             return True
-        if num not in seen:
-            seen.add(num)
-    return False
+    return False     
+
+
+
+    # seen = set()
+
+    # for num in nums:
+    #     if num in seen:
+    #         return True
+    #     if num not in seen:
+    #         seen.add(num)
+    # return False
     
+
 print(has_dups([1,2,3,4,5,5]))
