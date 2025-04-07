@@ -23,17 +23,18 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 Input: nums = [3,2,4], target = 6
 Output: [1,2]
 
+
+
 if nums[i] + nums[i+1] == target
 return i,i+1
 """
-
-
 # def find_indices(nums, target):
-    # nums = sorted(nums)
+    # nums = sorted(nums) 
     # for i in range(len(nums)-1):
     #     if nums[i] + nums[i+1] == target:
     #         print(nums[i], nums[i+1])
     #         return i, i+1
+
     # for i in range(len(nums)):
     #     for j in range(i+1,len(nums)):
     #         if nums[i] + nums[j] == target:
