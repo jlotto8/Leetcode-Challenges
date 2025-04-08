@@ -37,4 +37,13 @@ def group_anagrams(strings):
     anagram_groups = dict()
 
     for word in strings:
-        
+        sorted_word = ''.join(sorted(word))
+        # print(sorted_word)
+
+        if sorted_word in anagram_groups:
+            anagram_groups[sorted_word].append(word)
+        else:
+            anagram_groups[sorted_word] = [word]
+
+    return list(anagram_groups.values())
+print(group_anagrams(["act","pots","tops","cat","stop","hat"]))
