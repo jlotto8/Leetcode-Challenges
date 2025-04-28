@@ -48,4 +48,19 @@ def find_top_k(nums,k):
         res.append(pair[1])
     return res
 
+# print(find_top_k(nums = [1,2,2,3,3,3], k = 2)) 
+
+from collections import Counter
+
+def top_k_frequent(nums, k):
+    # return [num for num, freq in sorted(Counter(nums).items(), key=lambda x: -x[1])[:k]]
+    return [x[0] for x in sorted(Counter(nums).items(), key=lambda x: -x[1])[:k]]
+
 print(find_top_k(nums = [1,2,2,3,3,3], k = 2))
+
+nums = [1,2,2,3,3,3]
+counts = Counter(nums)
+
+pairs = counts.items()
+comp_freq_reverse = lambda pair: -pair[1]
+sorted_pairs = 

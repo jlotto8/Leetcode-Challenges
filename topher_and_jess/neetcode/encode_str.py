@@ -68,13 +68,30 @@ def decode(string):
 
     while i < len(string):
         idx_of_star = (string.index('*',i))
-        print(f'index of * is {idx_of_star}')
+
         word_length = int(string[i:idx_of_star]) # the number that is the len of the following word
+       
         i = idx_of_star + 1
+        
         idx_of_star = i + word_length
         list_result.append(string[i:idx_of_star])
         i = idx_of_star
     return list_result
 
 print(decode('4*neet4*code4*love3*you'))
-
+ def decode(self, s: str) -> List[str]:
+        if not s:
+            return []
+        sizes, res, i = [], [], 0
+        while s[i] != '#':
+            cur = ""
+            while s[i] != ',':
+                cur += s[i]
+                i += 1
+            sizes.append(int(cur))
+            i += 1
+        i += 1
+        for sz in sizes:
+            res.append(s[i:i + sz])
+            i += sz
+        return res
