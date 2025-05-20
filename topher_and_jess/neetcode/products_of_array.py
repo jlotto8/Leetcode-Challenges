@@ -56,9 +56,25 @@ postfix[1] = postfix[2] * nums[2] =
 postfix[0] =
 """
 
-def product_except_self(nums):
 
-    length = len(nums)
-    prefix = [1]
-    postfix = [1]
-    output = []
+def product_except_self(nums):
+    n = len(nums)
+    
+    # Step 1: Create arrays to store prefix and suffix products
+    prefix = [1] * n
+    suffix = [1] * n
+    output = [0] * n  # This will store the final result
+
+    # Step 2: Fill in the prefix array
+    for i in range(1, n):
+        prefix[i] = prefix[i - 1] * nums[i - 1]
+
+    # Step 3: Fill in the suffix array
+    for i in range(n - 2, -1, -1):
+        suffix[i] = suffix[i + 1] * nums[i + 1]
+
+    # Step 4: Compute output[i] = prefix[i] * suffix[i]
+    for i in range(n):
+        output[i] = prefix[i] * suffix[i]
+
+    return output
